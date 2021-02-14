@@ -1,0 +1,8 @@
+.urgentItem{
+  display: flex;
+  background-color: blue;
+  align-items: center;
+  justify-content: flex-start;
+  height: 100px;
+
+}
