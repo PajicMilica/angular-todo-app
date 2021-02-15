@@ -1,22 +1,18 @@
-
 .lists-wrapper {
   display: grid;
   grid-template-columns: auto auto auto;
-  margin-left: 100px;
-  margin-right: 100px;
-  margin-top: 50px;
-  margin-bottom: 50px;
   text-align: center;
-
 }
-h3{
- text-align: center;
-  color: #5db57f;
+
+h2 {
+  text-align: center;
+  color: #7c5c39;
 }
 
 .list {
   padding: 20px;
   border-radius: 10px;
+  margin: 16px;
 }
 
 #todo-list {
@@ -30,4 +26,8 @@ h3{
 #homepage-wrapper {
   background-color: rgba(245, 245, 245, 0.95);
   border-radius: 10px;
+}
+
+#done-list {
+  background-color: #63ba59;
 }
