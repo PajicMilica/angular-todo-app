@@ -7,6 +7,8 @@ import { HomepageComponent } from './homepage/homepage.component';
 import { TodoItemComponent } from './todo-item/todo-item.component';
 import { DoneItemComponent } from './done-item/done-item.component';
 import { UrgentItemComponent } from './urgent-item/urgent-item.component';
+import { TodoAddComponent } from './todo-add/todo-add.component';
+import { UrgentAddComponent } from './urgent-add/urgent-add.component';
 
 @NgModule({
   declarations: [
@@ -14,7 +16,9 @@ import { UrgentItemComponent } from './urgent-item/urgent-item.component';
     HomepageComponent,
     TodoItemComponent,
     DoneItemComponent,
-    UrgentItemComponent
+    UrgentItemComponent,
+    TodoAddComponent,
+    UrgentAddComponent
   ],
   imports: [
     BrowserModule,
