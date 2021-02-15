@@ -1,0 +1,12 @@
+.doneItem{
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  height: 50px;
+  background-color: #77ff6d;
+  margin-left: 10px;
+  margin-right: 30px;
+  margin-bottom: 8px;
+  margin-top: 8px;
+  border-radius: 10px;
+}
