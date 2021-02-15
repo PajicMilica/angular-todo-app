@@ -1,7 +1,7 @@
 .urgentItem{
   display: flex;
   align-items: center;
-  justify-content: flex-start;
+  justify-content: space-between;
   height: 50px;
   background-color: whitesmoke;
   margin-bottom: 8px;

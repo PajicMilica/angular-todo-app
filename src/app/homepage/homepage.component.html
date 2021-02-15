@@ -2,19 +2,24 @@
   <h2>Check state of your to-do list</h2>
   <div class="lists-wrapper m-4">
     <div class="list" id="todo-list">
+      <h5 class="text-white">To do</h5>
       <app-todo-item></app-todo-item>
       <app-todo-item></app-todo-item>
       <app-todo-item></app-todo-item>
+      <button type="button" class="btn btn-dark">Add todo item</button>
     </div>
     <div class="list" id="done-list">
+      <h5 class="text-white">Done</h5>
       <app-done-item></app-done-item>
       <app-done-item></app-done-item>
       <app-done-item></app-done-item>
     </div>
     <div class="list" id="urgent-list">
+      <h5 class="text-white">Urgent</h5>
       <app-urgent-item></app-urgent-item>
       <app-urgent-item></app-urgent-item>
       <app-urgent-item></app-urgent-item>
+      <button type="button" class="btn btn-dark">Add urgent todo item</button>
     </div>
   </div>
 </div>
