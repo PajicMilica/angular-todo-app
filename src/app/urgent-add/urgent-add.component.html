@@ -1,11 +1,15 @@
 <div id="form">
-  <form action="/action_page.php">
-    <label for="todoAdd"><h5>Name of urgent todo item:</h5></label>
-    <input type="text" id="todoAdd" ><br><br>
-
-    <label for="birthday"><h5>Final time:</h5></label>
-    <input type="date" id="birthday" name="birthday">
-    <input type="submit" value="+ add" >
+  <form action="/" (submit)="saveTodoUrgentItem($event)">
+    <h5>Name of urgent todo item:</h5>
+    <input type="text" name="todoAdd" [(ngModel)]="urgentInput"><br><br>
+    <h5>Final date:</h5>
+    <input type="date" name="date1" [(ngModel)]="finalDate" [min]="minDate">
+    <div *ngIf="showMessageError" class="alert alert-danger" role="alert">
+      You have to enter todo name and date
+    </div>
+    <div class="btn-wrapper mt-2">
+      <input type="submit" class="btn btn-primary mr-3 btn-text-size" value="+ Add">
+      <a type="button" href="/" class="btn btn-dark btn-text-size">Cancel</a>
+    </div>
   </form>
-
 </div>

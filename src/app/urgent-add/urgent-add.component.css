@@ -9,19 +9,13 @@ input[type=text],input[type=date]{
 
 }
 
-input[type=submit] {
-  width: 100%;
-  background-color: #e00404;
-  color: white;
-  padding: 14px 20px;
-  margin: 8px 0;
-  border: none;
-  border-radius: 4px;
-  cursor: pointer;
+.btn-wrapper {
+  display: flex;
+  justify-content: flex-end;
 }
 
-input[type=submit]:hover {
-  background-color: #ee5d5d;
+.btn-text-size {
+  font-size: larger;
 }
 
 #form {
@@ -31,7 +25,6 @@ input[type=submit]:hover {
   margin-left: 300px;
   margin-right: 300px ;
   margin-top: 100px;
-  height: 350px;
 }
 h5{
   color: #7e0707;

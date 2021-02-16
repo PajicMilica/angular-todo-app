@@ -1,5 +1,5 @@
 body{
   background-image: url("src/assets/bcg4.jpg");
-  background-repeat: no-repeat;
+  background-repeat: repeat-y;
   background-size: cover;
 }
