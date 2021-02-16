@@ -80,4 +80,28 @@ export class HomepageComponent implements OnInit {
     localStorage.setItem(HomepageComponent.TODO_STORAGE_KEY, JSON.stringify(newArray));
     this.todoList = newArray;
   }
+
+
+  markTodoUrgentAsDone(todoUrgent: string) {
+    let doneArrayString = localStorage.getItem(HomepageComponent.DONE_STORAGE_KEY);
+    if (doneArrayString) {
+      let doneArray = JSON.parse(doneArrayString);
+      doneArray.push(todoUrgent);
+      localStorage.setItem(HomepageComponent.DONE_STORAGE_KEY, JSON.stringify(doneArray));
+      this.doneList = doneArray;
+    }else {
+      const doneTodo = [todoUrgent];
+      localStorage.setItem(HomepageComponent.DONE_STORAGE_KEY, JSON.stringify(doneTodo));
+      this.doneList = doneTodo;
+    }
+    let newUrgentArray=[];
+    for(let item of this.urgentList){
+      if(item.item === todoUrgent){
+        continue;
+      }
+      newUrgentArray.push(item.item);
+      localStorage.setItem(HomepageComponent.URGENT_KEY,JSON.stringify(newUrgentArray));
+    }
+    this.urgentList=newUrgentArray;
+  }
 }

@@ -1,7 +1,7 @@
 <div class="urgentItem">
   <div class="toDo-check urgent-text">
     <div>
-      <input class="m-2" type="checkbox" value="" id="check">
+      <input class="m-2" type="checkbox" value="" id="check" [(ngModel)]="isChecked" (change)="checkValue()">
     </div>
     <label class="mb-0" for="check">
       {{ urgentItem.item}}
