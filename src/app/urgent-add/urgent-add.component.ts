@@ -34,7 +34,7 @@ export class UrgentAddComponent implements OnInit {
     var todoUrgentListArrayString = localStorage.getItem(UrgentAddComponent.TODO_URGENT_KEY);
 
     if(todoUrgentListArrayString) {
-      let urgent = {
+      let urgent: UrgentItem = {
         item: this.urgentInput,
         date: this.finalDate
       }
@@ -43,7 +43,7 @@ export class UrgentAddComponent implements OnInit {
       console.log(todoUrgentListArray);
       localStorage.setItem(UrgentAddComponent.TODO_URGENT_KEY, JSON.stringify(todoUrgentListArray));
     }else{
-      let urgent = {
+      let urgent: UrgentItem = {
         item: this.urgentInput,
         date: this.finalDate
       }
@@ -62,4 +62,9 @@ export class UrgentAddComponent implements OnInit {
     console.log(dateString);
     return dateString;
   }
+}
+
+export interface UrgentItem {
+  item: string;
+  date: string;
 }

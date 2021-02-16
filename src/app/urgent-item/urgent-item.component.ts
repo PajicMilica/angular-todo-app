@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, Input, OnInit} from '@angular/core';
+import {UrgentItem} from "../urgent-add/urgent-add.component";
 
 @Component({
   selector: 'app-urgent-item',
@@ -7,7 +8,11 @@ import { Component, OnInit } from '@angular/core';
 })
 export class UrgentItemComponent implements OnInit {
 
-  constructor() { }
+  @Input()
+  urgentItem: UrgentItem;
+
+  constructor() {
+  }
 
   ngOnInit(): void {
   }
