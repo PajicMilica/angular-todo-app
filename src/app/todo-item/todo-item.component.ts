@@ -1,4 +1,4 @@
-import {Component, Input, OnInit} from '@angular/core';
+import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
 
 @Component({
   selector: 'app-todo-item',
@@ -10,9 +10,20 @@ export class TodoItemComponent implements OnInit {
   @Input()
   todoItem: string;
 
+  @Output()
+  markAsDone: EventEmitter<string> = new EventEmitter<string>();
+
+  isChecked: boolean;
+
   constructor() { }
 
   ngOnInit(): void {
+    this.isChecked = false;
   }
 
+  checkValue(): void {
+    if(this.isChecked){
+      this.markAsDone.emit(this.todoItem);
+    }
+  }
 }

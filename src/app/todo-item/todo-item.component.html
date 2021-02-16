@@ -1,12 +1,10 @@
 <div class="toDoItem">
-
   <div class="toDo-check">
     <div>
-      <input class="m-2" type="checkbox" value="" id="check">
+      <input class="m-2" type="checkbox" id="check" name="check" [(ngModel)]="isChecked" (change)="checkValue()">
     </div>
     <label class="mb-0" for="check">
       {{ todoItem }}
     </label>
   </div>
-
 </div>

@@ -1,6 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {UrgentItem} from "../urgent-add/urgent-add.component";
 
+
 @Component({
   selector: 'app-homepage',
   templateUrl: './homepage.component.html',
@@ -16,7 +17,8 @@ export class HomepageComponent implements OnInit {
   urgentList: UrgentItem[];
   doneList: string[];
 
-  constructor() { }
+  constructor() {
+  }
 
 
   ngOnInit(): void {
@@ -26,19 +28,56 @@ export class HomepageComponent implements OnInit {
   }
 
   getTodoList(): string[] {
-    let todoArrayString= localStorage.getItem(HomepageComponent.TODO_STORAGE_KEY);
-    return JSON.parse(todoArrayString);
+    let todoArrayString = localStorage.getItem(HomepageComponent.TODO_STORAGE_KEY);
+    if (todoArrayString) {
+      return JSON.parse(todoArrayString);
+    } else {
+      return [];
+    }
   }
 
   getUrgentList(): UrgentItem[] {
-    let urgentArrayString=localStorage.getItem(HomepageComponent.URGENT_KEY);
-    return JSON.parse(urgentArrayString);
+    let urgentArrayString = localStorage.getItem(HomepageComponent.URGENT_KEY);
+    if (urgentArrayString) {
+      return JSON.parse(urgentArrayString);
+    } else {
+      return [];
+    }
   }
 
-  getDoneList(): string[]{
-    let doneArrayString =localStorage.getItem(HomepageComponent.DONE_STORAGE_KEY);
-    return JSON.parse(doneArrayString);
+  getDoneList(): string[] {
+    let doneArrayString = localStorage.getItem(HomepageComponent.DONE_STORAGE_KEY);
+    if (doneArrayString) {
+      return JSON.parse(doneArrayString);
+    } else {
+      return [];
+    }
   }
 
 
+  markTodoAsDone(todoItem: string) {
+    // dodavanje item-a u done skladiste
+    console.log(todoItem);
+    let doneArrayString = localStorage.getItem(HomepageComponent.DONE_STORAGE_KEY);
+    if (doneArrayString) {
+      let doneArray = JSON.parse(doneArrayString);
+      doneArray.push(todoItem);
+      localStorage.setItem(HomepageComponent.DONE_STORAGE_KEY, JSON.stringify(doneArray));
+      this.doneList = doneArray;
+    } else {
+      const doneTodo = [todoItem];
+      localStorage.setItem(HomepageComponent.DONE_STORAGE_KEY, JSON.stringify(doneTodo));
+      this.doneList = doneTodo;
+    }
+    //izbacivanje
+    let newArray = [];
+    for (let item of this.todoList) {
+      if (item === todoItem) {
+        continue;
+      }
+      newArray.push(item);
+    }
+    localStorage.setItem(HomepageComponent.TODO_STORAGE_KEY, JSON.stringify(newArray));
+    this.todoList = newArray;
+  }
 }
