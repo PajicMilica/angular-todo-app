@@ -9,6 +9,7 @@ import { DoneItemComponent } from './done-item/done-item.component';
 import { UrgentItemComponent } from './urgent-item/urgent-item.component';
 import { TodoAddComponent } from './todo-add/todo-add.component';
 import { UrgentAddComponent } from './urgent-add/urgent-add.component';
+import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import { UrgentAddComponent } from './urgent-add/urgent-add.component';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule,
   ],
   bootstrap: [AppComponent]
 })

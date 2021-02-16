@@ -1,9 +1,13 @@
-<p>todo-add works!</p>
 <div id="form">
-  <form action="/action_page.php">
-    <label for="todoAdd"><h5>Name of todo item:</h5></label>
-    <input type="text" id="todoAdd"  >
-
-    <input type="submit" value="+ add" >
+  <form (submit)="saveTodoItem($event)">
+    <h5>Name of todo item:</h5>
+    <input type="text" name="todoAdd" [(ngModel)]="todoInput">
+    <div *ngIf="showErrorMessage" class="alert alert-danger" role="alert">
+      You have to enter todo name
+    </div>
+    <div class="btn-wrapper">
+      <input type="submit" class="btn btn-primary mr-3 btn-text-size" value="+ Add" >
+      <a type="button"  href="/" class="btn btn-dark btn-text-size">Cancel</a>
+    </div>
   </form>
 </div>
