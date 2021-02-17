@@ -3,17 +3,18 @@
   <div class="lists-wrapper m-4">
     <div class="list" id="todo-list">
       <h5 class="text-white">To do</h5>
-      <app-todo-item *ngFor="let item of todoList" [todoItem]="item" (markAsDone)="markTodoAsDone($event)"></app-todo-item>
+      <app-todo-item *ngFor="let item of todoList" [todoItem]="item" (markAsDone)="markTodoAsDone($event)" (deleteTodoEvent)="deleteTodo($event)" ></app-todo-item>
       <a href="add/todo" class="btn btn-dark">+ Add todo item</a>
     </div>
     <div class="list" id="done-list">
       <h5 class="text-white">Done</h5>
-      <app-done-item *ngFor="let doneItem of doneList" [doneItem]="doneItem"></app-done-item>
+      <app-done-item *ngFor="let doneItem of doneList" [doneItem]="doneItem" (deleteDoneEvent)="deleteDone($event)"></app-done-item>
     </div>
     <div class="list" id="urgent-list">
       <h5 class="text-white">Urgent</h5>
       <app-urgent-item *ngFor="let urgentItem of urgentList" [urgentItem]="urgentItem"
-                       (markAsDoneUrgent)="markTodoUrgentAsDone($event)"></app-urgent-item>
+                       (markAsDoneUrgent)="markTodoUrgentAsDone($event)" (deleteUrgentEvent)="deleteUrgent($event)"></app-urgent-item>
+
 
       <a href="add/urgent" class="btn btn-dark">+ Add urgent todo item</a>
     </div>

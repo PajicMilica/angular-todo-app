@@ -13,6 +13,9 @@ export class UrgentItemComponent implements OnInit {
 
   @Output()
   markAsDoneUrgent: EventEmitter<string>=new EventEmitter<string>();
+
+  @Output()
+  deleteUrgentEvent : EventEmitter<UrgentItem>=new EventEmitter<UrgentItem>();
   isChecked: boolean;
 
   constructor() {
@@ -26,5 +29,9 @@ export class UrgentItemComponent implements OnInit {
     if(this.isChecked){
       this.markAsDoneUrgent.emit(this.urgentItem.item);
     }
+  }
+
+  deleteUrgent() : void {
+    this.deleteUrgentEvent.emit(this.urgentItem);
   }
 }

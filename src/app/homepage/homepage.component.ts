@@ -99,9 +99,47 @@ export class HomepageComponent implements OnInit {
       if(item.item === todoUrgent){
         continue;
       }
-      newUrgentArray.push(item.item);
+      newUrgentArray.push(item);
       localStorage.setItem(HomepageComponent.URGENT_KEY,JSON.stringify(newUrgentArray));
     }
     this.urgentList=newUrgentArray;
+  }
+
+  deleteTodo(deleteTodoItem: string) {
+    let newArray=[];
+    for(let item of this.todoList){
+      if(item === deleteTodoItem){
+        continue;
+      }
+      newArray.push(item);
+    }
+    localStorage.setItem(HomepageComponent.TODO_STORAGE_KEY,JSON.stringify(newArray));
+    this.todoList=newArray;
+  }
+
+  deleteUrgent(urgentItem: UrgentItem) {
+    let newUrgentArray=[];
+    for (let item of this.urgentList){
+      if(item === urgentItem){
+        continue;
+      }
+      newUrgentArray.push(item);
+    }
+    localStorage.setItem(HomepageComponent.URGENT_KEY,JSON.stringify(newUrgentArray));
+    this.urgentList=newUrgentArray;
+  }
+
+  deleteDone(doneItem: string) {
+    let newDoneArray=[];
+    let brojac=0;
+    for(let item of this.doneList){
+      if(item=== doneItem || brojac ===0){
+        brojac=brojac+1;
+        continue;
+      }
+      newDoneArray.push(item);
+    }
+    localStorage.setItem(HomepageComponent.DONE_STORAGE_KEY,JSON.stringify(newDoneArray));
+    this.doneList=newDoneArray;
   }
 }

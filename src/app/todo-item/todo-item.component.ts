@@ -12,6 +12,9 @@ export class TodoItemComponent implements OnInit {
 
   @Output()
   markAsDone: EventEmitter<string> = new EventEmitter<string>();
+  @Output()
+  deleteTodoEvent: EventEmitter<string> =new  EventEmitter<string>();
+
 
   isChecked: boolean;
 
@@ -25,5 +28,9 @@ export class TodoItemComponent implements OnInit {
     if(this.isChecked){
       this.markAsDone.emit(this.todoItem);
     }
+  }
+
+  deleteTodo() : void{
+    this.deleteTodoEvent.emit(this.todoItem);
   }
 }
