@@ -39,6 +39,12 @@ export class UrgentAddComponent implements OnInit {
         date: this.finalDate
       }
       let todoUrgentListArray = JSON.parse(todoUrgentListArrayString);
+      for(let itemU of todoUrgentListArray){
+        if(itemU.item===urgent.item && itemU.date===urgent.date){
+          alert("This item already exists, please enter something else");
+          return;
+        }
+      }
       todoUrgentListArray.push(urgent);
       console.log(todoUrgentListArray);
       localStorage.setItem(UrgentAddComponent.TODO_URGENT_KEY, JSON.stringify(todoUrgentListArray));

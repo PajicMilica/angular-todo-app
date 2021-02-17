@@ -9,4 +9,10 @@
   margin-bottom: 8px;
   margin-top: 8px;
   border-radius: 10px;
+  position: relative;
+}
+
+#deleteButton{
+  position: absolute;
+  right: 5px;
 }

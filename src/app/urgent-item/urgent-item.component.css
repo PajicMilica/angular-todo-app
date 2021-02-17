@@ -7,10 +7,16 @@
   margin-bottom: 8px;
   margin-top: 8px;
   border-radius: 10px;
+  position: relative;
+  padding-right: 20px ;
 }
 
 .toDo-check {
   display: flex;
   justify-content: flex-start;
   align-items: center;
+}
+#deleteButton{
+  position: absolute;
+  right: 5px;
 }

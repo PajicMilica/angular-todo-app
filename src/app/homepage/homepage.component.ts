@@ -100,15 +100,15 @@ export class HomepageComponent implements OnInit {
         continue;
       }
       newUrgentArray.push(item);
-      localStorage.setItem(HomepageComponent.URGENT_KEY,JSON.stringify(newUrgentArray));
     }
+    localStorage.setItem(HomepageComponent.URGENT_KEY,JSON.stringify(newUrgentArray));
     this.urgentList=newUrgentArray;
   }
 
   deleteTodo(deleteTodoItem: string) {
     let newArray=[];
     for(let item of this.todoList){
-      if(item === deleteTodoItem){
+      if(item === deleteTodoItem ){
         continue;
       }
       newArray.push(item);
@@ -133,8 +133,8 @@ export class HomepageComponent implements OnInit {
     let newDoneArray=[];
     let brojac=0;
     for(let item of this.doneList){
-      if(item=== doneItem || brojac ===0){
-        brojac=brojac+1;
+      if(item=== doneItem && brojac===0){
+        brojac=1;
         continue;
       }
       newDoneArray.push(item);

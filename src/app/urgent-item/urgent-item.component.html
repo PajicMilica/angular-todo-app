@@ -10,6 +10,9 @@
   <div class="final-time pr-2">
     {{ urgentItem.date}}
   </div>
-  <button type="button" (click)="deleteUrgent()">delete</button>
+
+  <button type="button" class="close" aria-label="Close" id="deleteButton" (click)="deleteUrgent()">
+    <span aria-hidden="true">&times;</span>
+  </button>
 
 </div>

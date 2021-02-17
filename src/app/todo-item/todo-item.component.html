@@ -6,6 +6,8 @@
     <label class="mb-0" for="check">
       {{ todoItem }}
     </label>
-    <button id="button" type="button" (click)="deleteTodo()"> delete</button>
   </div>
+  <button type="button" class="close" aria-label="Close" id="deleteButton" (click)="deleteTodo()">
+    <span aria-hidden="true">&times;</span>
+  </button>
 </div>

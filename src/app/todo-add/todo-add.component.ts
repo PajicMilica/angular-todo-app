@@ -30,6 +30,12 @@ export class TodoAddComponent implements OnInit {
     var todoListArrayString = localStorage.getItem(TodoAddComponent.TODO_STORAGE_KEY);
     if (todoListArrayString){
       let todoListArray = JSON.parse(todoListArrayString);
+      for (let item of todoListArray){
+        if(item === this.todoInput){
+          alert("This item already exists, please enter something else");
+          return;
+        }
+      }
       todoListArray.push(this.todoInput);
       console.log(todoListArray);
       localStorage.setItem(TodoAddComponent.TODO_STORAGE_KEY, JSON.stringify(todoListArray));

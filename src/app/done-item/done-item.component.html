@@ -1,4 +1,7 @@
 <div class="doneItem pl-2">
   {{doneItem}}
-  <button type="button" (click)="deleteDone()">delete</button>
+
+  <button type="button" class="close" aria-label="Close" id="deleteButton" (click)="deleteDone()">
+    <span aria-hidden="true">&times;</span>
+  </button>
 </div>
