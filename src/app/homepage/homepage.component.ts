@@ -56,7 +56,7 @@ export class HomepageComponent implements OnInit {
 
 
   markTodoAsDone(todoItem: string) {
-    // dodavanje item-a u done skladiste
+    // dodavanje item-a u skladište pod done ključem
     console.log(todoItem);
     let doneArrayString = localStorage.getItem(HomepageComponent.DONE_STORAGE_KEY);
     if (doneArrayString) {
@@ -83,6 +83,7 @@ export class HomepageComponent implements OnInit {
 
 
   markTodoUrgentAsDone(todoUrgent: string) {
+    //dodavanje item-a u done skladiste
     let doneArrayString = localStorage.getItem(HomepageComponent.DONE_STORAGE_KEY);
     if (doneArrayString) {
       let doneArray = JSON.parse(doneArrayString);
@@ -94,6 +95,7 @@ export class HomepageComponent implements OnInit {
       localStorage.setItem(HomepageComponent.DONE_STORAGE_KEY, JSON.stringify(doneTodo));
       this.doneList = doneTodo;
     }
+    //izbacivanje
     let newUrgentArray=[];
     for(let item of this.urgentList){
       if(item.item === todoUrgent){

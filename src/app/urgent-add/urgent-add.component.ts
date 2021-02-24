@@ -29,7 +29,6 @@ export class UrgentAddComponent implements OnInit {
       return;
     }
 
-
     //ubaci u skladiste
     var todoUrgentListArrayString = localStorage.getItem(UrgentAddComponent.TODO_URGENT_KEY);
 

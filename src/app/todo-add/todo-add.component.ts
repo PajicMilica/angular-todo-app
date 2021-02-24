@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import {FormControl, Validators} from "@angular/forms";
 
 @Component({
   selector: 'app-todo-add',
@@ -25,7 +24,6 @@ export class TodoAddComponent implements OnInit {
       event.preventDefault();
       return;
     }
-
     // dodajemo u skladiste
     var todoListArrayString = localStorage.getItem(TodoAddComponent.TODO_STORAGE_KEY);
     if (todoListArrayString){
